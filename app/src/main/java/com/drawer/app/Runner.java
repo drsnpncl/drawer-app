@@ -66,16 +66,34 @@ public class Runner {
 				String input = scanner.nextLine();
 				String[] commands = input.split(" ");
 				if(commands[0].equals("C")){
-					start(commands);
+                    if(commands.length == 3) {
+                        start(commands);
+                    } else {
+                        System.err.println("Invalid command, try again.");
+                    }
 				} else if(commands[0].equals("L")) {
-                    line(commands);
+                    if(commands.length == 5) {
+                        line(commands);
+                    } else {
+                        System.err.println("Invalid command, try again.");
+                    }
 				} else if(commands[0].equals("R")) {
-                    rectangle(commands);
+                    if(commands.length == 5) {
+                        rectangle(commands);
+                    } else {
+                        System.err.println("Invalid command, try again.");
+                    }
 				} else if(commands[0].equals("F")) {
-                    fill(commands);
+                    if(commands.length == 4) {
+                        fill(commands);
+                    } else {
+                        System.err.println("Invalid command, try again.");
+                    }
 				} else if(commands[0].equals("Q")) {
 					flag = false;
-				}
+				} else {
+                    System.err.println("Invalid command, try again.");
+                }
 			}
 			scanner.close();
 		};
